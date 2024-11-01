@@ -39,3 +39,16 @@ steps:
             echo "Branch is not 'prod', skipping terraform apply."
             exit 0
           fi
+
+# Choose one of the following logging options based on your needs:
+
+# # Option 1: Specify a logs bucket
+# logsBucket: 'gs://your-log-bucket-name'
+
+# # Option 2: Use regional user-owned bucket behavior
+# options:
+#   defaultLogsBucketBehavior: REGIONAL_USER_OWNED_BUCKET
+
+# # Option 3: Use Cloud Logging only
+options:
+  logging: CLOUD_LOGGING_ONLY
